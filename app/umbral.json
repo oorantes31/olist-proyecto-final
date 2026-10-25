@@ -1,0 +1,12 @@
+{
+  "umbral": 0.26113353157745683,
+  "umbral_10_operativo": 0.26113353157745683,
+  "metrica": "Precision@10%",
+  "precision_validada": 0.6641,
+  "precision_10_validacion": 0.6640548481880509,
+  "tasa_azar": 0.14641073352267162,
+  "regla_retraso": 0.6214495592556317,
+  "n_pedidos_entrenamiento": 77304,
+  "modelo": "Random Forest",
+  "fecha": "2026-10"
+}

@@ -1,0 +1,14 @@
+# Archivos temporales y paquetes comprimidos
+*.zip
+*.pkl
+pedidos_contrato_77304.csv
+ejecutar_notebook.py
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv/
+venv/
+.streamlit/secrets.toml
+.DS_Store
+Thumbs.db
