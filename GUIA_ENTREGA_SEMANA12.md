@@ -101,15 +101,21 @@ Estimado docente de KODIGO Academy,
 
 Presento la entrega del Proyecto Final Integrador (Semana 12) correspondiente al sistema de Inteligencia Artificial y Machine Learning para Olist Brasil, desarrollado por Oscar Orantes.
 
+Enlaces Oficiales de Despliegue en Producción:
+- Link de la App (Streamlit Community Cloud): https://olist-proyecto-final-ulises-orantes.streamlit.app/
+- Link de la API (Render): https://olist-proyecto-final.onrender.com
+- Documentación interactiva Swagger (/docs): https://olist-proyecto-final.onrender.com/docs
+- Link del Repositorio GitHub: https://github.com/oorantes31/olist-proyecto-final
+
 Resumen de la entrega:
 - Cohorte oficial estricta: 77,304 pedidos evaluados sin fugas de datos (zero data leakage).
 - Modelo seleccionado: Random Forest Classifier calibrado, logrando una Precision@10% de 66.41% sobre la partición de validación temporal (20,422 pedidos), superando holgadamente la cota de excelencia del 32% requerida en la rúbrica y superando a la heurística de retraso puro en +4.27 puntos porcentuales.
 - Bonificación (Bonus Track): Se entrenó e integró una Red Neuronal Densa (MLP) alcanzando 65.38% de Precision@10% y ROC-AUC de 0.7864.
-- Microservicio RESTful (FastAPI): Endpoint POST /riesgo con validación estricta Pydantic (422), Swagger docs y serialización modular.
-- Aplicación Web Interactiva (Streamlit): Multi-página completa con evaluador de riesgo en tiempo real, análisis de sentimiento de comentarios en portugués (Opción 3B), pronóstico diario de demanda para junio de 2018 con intervalo de predicción al 80% (Opción 3A), y Ficha Técnica interactiva.
+- Microservicio RESTful (FastAPI en Render): Endpoint POST /riesgo con validación estricta Pydantic (422), Swagger docs (/docs) y serialización modular.
+- Aplicación Web Interactiva (Streamlit Cloud): Multi-página completa (st.navigation) con evaluador de riesgo en tiempo real conectado a Render, análisis de sentimiento de comentarios en portugués (Opción 3B), pronóstico diario de demanda para junio de 2018 con intervalo de predicción al 80% (Opción 3A), y Ficha Técnica interactiva.
 - Documentación de Gobernanza: Ficha Técnica (ficha_modelo.md) y Checklist Ético (CHECKLIST_ETICO.md).
 
-El archivo adjunto Semana12_Oscar_Orantes_Proyecto_Final.zip contiene la estructura completa del proyecto con todos los artefactos, datos y el notebook maestro completamente ejecutado con código de salida 0 y gráficos poblados.
+El archivo adjunto Semana12_Oscar_Orantes_Proyecto_Final.zip (y Orantes_Oscar_Proyecto_Final.zip) contiene la estructura completa del proyecto con todos los artefactos, datos y el notebook maestro completamente ejecutado con código de salida 0 y gráficos poblados.
 
 Atentamente,
 Oscar Orantes

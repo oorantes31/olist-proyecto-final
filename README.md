@@ -2,7 +2,17 @@
 
 **Autor:** Oscar Orantes  
 **Programa:** AI Machine Learning Trainee 1 — KODIGO Academy (Semana 12)  
-**Repositorio:** `https://github.com/oorantes31/olist-proyecto-final`
+
+---
+
+## 🔗 Enlaces Oficiales de Despliegue (Producción)
+
+| Componente | Enlace Público |
+| :--- | :--- |
+| 🌐 **Aplicación Interactiva (Streamlit Community Cloud)** | **[https://olist-proyecto-final-ulises-orantes.streamlit.app/](https://olist-proyecto-final-ulises-orantes.streamlit.app/)** |
+| ⚙️ **API RESTful (Render)** | **[https://olist-proyecto-final.onrender.com](https://olist-proyecto-final.onrender.com)** |
+| 📖 **Documentación Interactiva Swagger (`/docs`)** | **[https://olist-proyecto-final.onrender.com/docs](https://olist-proyecto-final.onrender.com/docs)** |
+| 💻 **Repositorio GitHub** | **[https://github.com/oorantes31/olist-proyecto-final](https://github.com/oorantes31/olist-proyecto-final)** |
 
 ---
 

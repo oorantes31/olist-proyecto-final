@@ -24,13 +24,15 @@ UMBRAL_PATH = os.path.join(BASE_DIR, "umbral.json")
 
 
 def obtener_api_url() -> str:
-    """Obtiene la URL de la API desde st.secrets, variable de entorno o localhost."""
+    """Obtiene la URL de la API desde st.secrets, variable de entorno o URL de producción en Render."""
     try:
         if "API_URL" in st.secrets:
             return str(st.secrets["API_URL"]).rstrip("/")
     except Exception:
         pass
-    return os.environ.get("API_URL", "http://localhost:8000").rstrip("/")
+    return os.environ.get(
+        "API_URL", "https://olist-proyecto-final.onrender.com"
+    ).rstrip("/")
 
 
 API_DEFAULT_URL = obtener_api_url()
