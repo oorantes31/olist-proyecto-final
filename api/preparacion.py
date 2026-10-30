@@ -21,8 +21,11 @@ def parse_fechas(df):
     ]
     df_out = df.copy()
     for col in cols_fecha:
-        if col in df_out.columns and not np.issubdtype(df_out[col].dtype, np.datetime64):
-            df_out[col] = pd.to_datetime(df_out[col], errors="coerce")
+        if col in df_out.columns:
+            s = pd.to_datetime(df_out[col], errors="coerce")
+            if getattr(s.dt, "tz", None) is not None:
+                s = s.dt.tz_localize(None)
+            df_out[col] = s
     return df_out
 
 
@@ -80,9 +83,9 @@ def crear_variables(df):
     entrega_adelantada = (dias_retraso < -3.0).astype(float)
 
     # 3. Geografica interestatal
-    mismo_estado = (
-        df_proc["estado_cliente"].astype(str) == df_proc["estado_vendedor"].astype(str)
-    ).astype(float)
+    est_cliente = df_proc["estado_cliente"].fillna("SP").astype(str)
+    est_vendedor = df_proc["estado_vendedor"].fillna("SP").astype(str)
+    mismo_estado = (est_cliente == est_vendedor).astype(float)
 
     # 4. Ratios financieros y fisicos
     precio = pd.to_numeric(df_proc["precio_total"], errors="coerce").fillna(0.0)
@@ -112,7 +115,7 @@ def crear_variables(df):
         "automotivo",
         "brinquedos",
     ]
-    cat_serie = df_proc["categoria"].astype(str).str.lower().fillna("outros")
+    cat_serie = df_proc["categoria"].fillna("outros").astype(str).str.lower()
     categoria_clean = cat_serie.where(cat_serie.isin(top_categorias), other="outros")
 
     # 7. Construccion del DataFrame final de variables
@@ -136,9 +139,9 @@ def crear_variables(df):
             "ratio_flete_precio": ratio_flete_precio,
             "precio_promedio_item": precio_promedio_item,
             "peso_promedio_item": peso_promedio_item,
-            "estado_cliente": df_proc["estado_cliente"].astype(str).fillna("SP"),
-            "estado_vendedor": df_proc["estado_vendedor"].astype(str).fillna("SP"),
-            "tipo_pago": df_proc["tipo_pago"].astype(str).fillna("credit_card"),
+            "estado_cliente": est_cliente,
+            "estado_vendedor": est_vendedor,
+            "tipo_pago": df_proc["tipo_pago"].fillna("credit_card").astype(str),
             "categoria": categoria_clean,
         },
         index=df.index,

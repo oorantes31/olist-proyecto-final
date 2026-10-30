@@ -143,7 +143,7 @@ def render():
             )
             fotos_promedio = st.number_input(
                 "Fotos promedio del producto",
-                min_value=1.0,
+                min_value=0.0,
                 max_value=15.0,
                 value=2.0,
                 step=1.0,
@@ -217,7 +217,7 @@ def render():
             )
             peso_total_g = st.number_input(
                 "Peso total (gramos)",
-                min_value=50.0,
+                min_value=0.0,
                 max_value=50000.0,
                 value=float(def_peso),
             )
@@ -227,7 +227,7 @@ def render():
                 index=0,
             )
             cuotas_max = st.number_input(
-                "Cuotas de pago (cuotas_max)", min_value=1, max_value=24, value=1
+                "Cuotas de pago (cuotas_max)", min_value=0, max_value=24, value=1
             )
 
         submitted = st.form_submit_button(

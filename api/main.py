@@ -119,17 +119,17 @@ class PedidoEntrada(BaseModel):
     precio_total: float = Field(
         ..., ge=0.0, description="Suma total de precios en reales (BRL)", examples=[135.0]
     )
-    flete_total: float = Field(
-        ..., ge=0.0, description="Suma total de flete en reales (BRL)", examples=[18.5]
+    flete_total: Optional[float] = Field(
+        0.0, ge=0.0, description="Suma total de flete en reales (BRL)", examples=[18.5]
     )
-    peso_total_g: float = Field(
-        ..., ge=0.0, description="Peso total en gramos", examples=[1200.0]
+    peso_total_g: Optional[float] = Field(
+        None, ge=0.0, description="Peso total en gramos", examples=[1200.0]
     )
-    fotos_promedio: float = Field(
-        2.0, ge=0.0, description="Promedio de fotos del producto", examples=[2.0]
+    fotos_promedio: Optional[float] = Field(
+        None, ge=0.0, description="Promedio de fotos del producto", examples=[2.0]
     )
     categoria: Optional[str] = Field(
-        "cama_mesa_banho",
+        None,
         description="Categoría principal del artículo",
         examples=["cama_mesa_banho"],
     )
@@ -139,8 +139,8 @@ class PedidoEntrada(BaseModel):
     tipo_pago: Optional[str] = Field(
         "credit_card", description="Tipo de pago principal", examples=["credit_card"]
     )
-    cuotas_max: int = Field(
-        1, ge=1, description="Máximo de cuotas del pedido", examples=[1]
+    cuotas_max: Optional[int] = Field(
+        1, ge=0, description="Máximo de cuotas del pedido", examples=[1]
     )
 
 
