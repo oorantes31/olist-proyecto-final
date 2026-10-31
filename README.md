@@ -1,4 +1,4 @@
-# 🇧🇷 Proyecto Final Olist E-Commerce: Predicción de Riesgo, Sentimiento NLP, Pronóstico y Auditoría Ética
+# Proyecto Final Olist E-Commerce: Predicción de Riesgo, Sentimiento NLP, Pronóstico y Auditoría Ética
 
 **Autores:** Yamileth Martinez, Oscar Orantes, Ricardo Rodríguez Vasquez  
 **Programa:** AI Machine Learning Trainee 1 — KODIGO Academy (Semana 12)  
